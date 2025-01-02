@@ -16,6 +16,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: todoapp_tomcat
+    environment:
+      JAVA_OPTS: "-Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties"
     ports:
       - "8080:8080"
     depends_on:
